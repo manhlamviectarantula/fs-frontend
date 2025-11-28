@@ -103,7 +103,7 @@ const Cart = () => {
       if (!currentCustomer) {
         setNotLogin(1)
       }
-      const response = await axios.post(`http://localhost:8000/api/v4/order/create-order`, {
+      const response = await axios.post(`${process.env.REACT_APP_API}/api/v4/order/create-order`, {
         customer: currentCustomer._id,
         // items: [{ productID: "66bf32a7aab0e3ba075af756", quantity: 1, price: 30000 }],
         items: cartUser.map(
@@ -153,7 +153,7 @@ const Cart = () => {
                   <CartItem>
                     <Image 
                     style={{ border: '2px solid black', borderRadius: '4px' }} 
-                    // src={`http://localhost:8000/src/uploads/` + product.thumbnail} 
+                    // src={`${process.env.REACT_APP_API}/src/uploads/` + product.thumbnail} 
                     src={product.thumbnail} 
                     width={150} height={150} alt='productImage' />
                     <div className='infoItem ms-4 w-100' key={index}>

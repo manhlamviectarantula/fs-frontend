@@ -58,7 +58,7 @@ const ProductList = () => {
     }
 
     useEffect(() => {
-        const local = `http://localhost:8000/api/v2/product/get-product`
+        const local = `${process.env.REACT_APP_API}/api/v2/product/get-product`
         const url = `${local}?category=${catName}&page=${page}&search=${search}&sex=${sex}&brand=${brand}&country=${country}&sortField=${sort.sort},${sort.order}`
         axios.get(url)
             .then(result => {
@@ -149,7 +149,7 @@ const ProductList = () => {
                                                 className="card"
                                             >
                                                 <img src={product.thumbnail} className="card-img-top" alt={product.name} />
-                                                {/* <img src={`http://localhost:8000/src/uploads/` + product.thumbnail} className="card-img-top" alt={product.name} /> */}
+                                                {/* <img src={`${process.env.REACT_APP_API}/src/uploads/` + product.thumbnail} className="card-img-top" alt={product.name} /> */}
                                                 <div className="card-body">
                                                     <h6 className="card-title fw-bold">{product.name}</h6>
                                                     <p style={{ marginBottom: '5px' }} className="card-price fw-bold">{formatNumber(product.price)} VND</p>

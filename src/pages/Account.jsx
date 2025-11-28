@@ -31,7 +31,7 @@ const Account = () => {
   const Update = (e) => {
     e.preventDefault();
     axios
-      .put("http://localhost:8000/api/v1/user/update-user/" + id, {
+      .put("http://localhost:8080/account/update-account/" + id, {
         name,
         email,
         phone,

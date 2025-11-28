@@ -57,7 +57,7 @@ const DetailsProduct = () => {
     useEffect(() => {
         const getProduct = async () => {
             try {
-                const res = await axios.get(`http://localhost:8000/api/v2/product/get-one-product/${id}`);
+                const res = await axios.get(`${process.env.REACT_APP_API}/api/v2/product/get-one-product/${id}`);
                 // console.log(res.data);
                 setProduct(res.data);
                 setCurrentImage(res.data.thumbnail);
@@ -115,7 +115,7 @@ const DetailsProduct = () => {
                                 <ImageItem
                                     onClick={() => handleImageChange(4)}
                                     src={product.thumbnail}
-                                    // src={`http://localhost:8000/src/uploads/` + product.thumbnail}
+                                    // src={`${process.env.REACT_APP_API}/src/uploads/` + product.thumbnail}
 
                                     width={100}
                                     height={100}
@@ -125,7 +125,7 @@ const DetailsProduct = () => {
                                     <>
                                         <ImageItem
                                             onClick={() => handleImageChange(0)}
-                                            // src={`http://localhost:8000/src/uploads/` + product.images[0]}
+                                            // src={`${process.env.REACT_APP_API}/src/uploads/` + product.images[0]}
                                             src={product.images[0]}
 
                                             width={100}
@@ -134,7 +134,7 @@ const DetailsProduct = () => {
                                         />
                                         <ImageItem
                                             onClick={() => handleImageChange(1)}
-                                            // src={`http://localhost:8000/src/uploads/` + product.images[1]}
+                                            // src={`${process.env.REACT_APP_API}/src/uploads/` + product.images[1]}
                                             src={product.images[1]}
 
                                             width={100}
@@ -143,7 +143,7 @@ const DetailsProduct = () => {
                                         />
                                         <ImageItem
                                             onClick={() => handleImageChange(2)}
-                                            // src={`http://localhost:8000/src/uploads/` + product.images[2]}
+                                            // src={`${process.env.REACT_APP_API}/src/uploads/` + product.images[2]}
                                             src={product.images[2]}
 
                                             width={100}
@@ -156,7 +156,7 @@ const DetailsProduct = () => {
                             <div>
                                 <Image
                                     style={{ border: '2px solid black' }}
-                                    // src={`http://localhost:8000/src/uploads/` + currentImage}
+                                    // src={`${process.env.REACT_APP_API}/src/uploads/` + currentImage}
                                     src={currentImage}
 
                                     width={500}

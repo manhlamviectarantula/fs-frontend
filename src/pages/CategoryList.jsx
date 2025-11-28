@@ -10,7 +10,7 @@ const CategoryList = () => {
   const [categories, setCategories] = useState([]);
 
   useEffect(() => {
-    axios.get('http://localhost:8000/api/v3/category/get-all-category')
+    axios.get(`${process.env.REACT_APP_API}/api/v3/category/get-all-category`)
       .then(result => {
         setCategories(result.data)
       })

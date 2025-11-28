@@ -22,7 +22,7 @@ const ChangePw = () => {
     const UpdatePW = (e) => {
         e.preventDefault();
         axios
-            .put("http://localhost:8000/api/v1/user/update-pw/" + id, {
+            .put(`${process.env.REACT_APP_API}/api/v1/user/update-pw/` + id, {
                 oldPass,
                 newPass,
                 cNewPass,
